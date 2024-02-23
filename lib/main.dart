@@ -1,3 +1,5 @@
+
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 // import 'package:google_fonts/google_fonts.dart';
@@ -17,6 +19,20 @@ class MyApp extends StatefulWidget {
 class _State extends State<MyApp> {
   // Variables here:
   final player = AudioPlayer();
+  Color centreBlue = Color(0xffADCBFC);
+  Color outlineBlue = Color(0xff067CCB);
+
+  Color centreRed = Color(0xffff2525);
+  Color outlineRed = Color(0xffc40050);
+
+  Color centrePink = Color(0xffE247FC);
+  Color outlinePink = Color(0xffA23AB7);
+
+  Color pressedColor = Colors.white;
+
+  double margin = 4;
+  double height = 98;
+  double width = 98;
 
   @override
   Widget build(BuildContext context) {
@@ -39,219 +55,98 @@ class _State extends State<MyApp> {
             children: [
               Row(
                 children: [
-                  MaterialButton(
-                    onPressed: () {
-                      player.play(AssetSource("1.mp3"));
-                    },
-                    color: Colors.red,
-                    height: 100,
-                    // child: Container(
-                    //   color: Colors.red,
-                    //   height: 100,
-                    //   width: 100,
-                    //   child: Center(child: Text('Column 1'),),
+                  Container(
+                    width: width,
+                    height: height,
+                    margin: EdgeInsets.only(bottom: margin,right:margin),
+                    child: MaterialButton(
+                      onPressed: () {
+                        setState(() async {
+                          player.play(AssetSource("1.mp3"));
+                          await Future.delayed(const Duration(milliseconds: 500));
+                        });
+
+                      },
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      gradient: RadialGradient(
+                        center: Alignment.center,
+                        radius: 1,
+                        colors: [
+                          centreBlue,
+                          outlineBlue
+                        ]
+                      )
                     ),
                   ),
-                  MaterialButton(
-                    onPressed: (){
-                      player.play(AssetSource("2.mp3"));
-                    },
-                    child: Container(
-                      color: Colors.green,
-                      height: 100,
-                      width: 100,
-                      child: Center(child: Text('Column 2')),
+                  Container(
+                    width: width,
+                    height: height,
+                    margin: EdgeInsets.only(bottom: margin,right:margin),
+                    child: MaterialButton(
+                      onPressed: () {
+                        player.play(AssetSource("2.mp3"));
+                      },
+                    ),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        gradient: RadialGradient(
+                            center: Alignment.center,
+                            radius: 1,
+                            colors: [
+                              centreRed,
+                              outlineRed
+                            ]
+                        )
                     ),
                   ),
                   Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 1'),),
+                    width: width,
+                    height: height,
+                    margin: EdgeInsets.only(bottom: margin,right:margin),
+                    child: MaterialButton(
+                      onPressed: () {
+                        player.play(AssetSource("3.mp3"));
+                      },
+                    ),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        gradient: RadialGradient(
+                            center: Alignment.center,
+                            radius: 1,
+                            colors: [
+                              centreBlue,
+                              outlineBlue
+                            ]
+                        )
+                    ),
                   ),
                   Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 2')),
+                    width: width,
+                    height: height,
+                    margin: EdgeInsets.only(bottom: margin,right:margin),
+                    child: MaterialButton(
+                      onPressed: () {
+                        player.play(AssetSource("4.mp3"));
+                      },
+                    ),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        gradient: RadialGradient(
+                            center: Alignment.center,
+                            radius: 1,
+                            colors: [
+                              centrePink,
+                              outlinePink
+                            ]
+                        )
+                    ),
                   ),
-
                 ],
               ),
-              Row(
-                children: [
-                  Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 1'),),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 2')),
-                  ),
-                  Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 1'),),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 2')),
-                  ),
 
-                ],
-              ),
-              Row(
-                children: [
-                  Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 1'),),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 2')),
-                  ),
-                  Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 1'),),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 2')),
-                  ),
 
-                ],
-              ),
-              Row(
-                children: [
-                  Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 1'),),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 2')),
-                  ),
-                  Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 1'),),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 2')),
-                  ),
-
-                ],
-              ),
-              Row(
-                children: [
-                  Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 1'),),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 2')),
-                  ),
-                  Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 1'),),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 2')),
-                  ),
-
-                ],
-              ),
-              Row(
-                children: [
-                  Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 1'),),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 2')),
-                  ),
-                  Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 1'),),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 2')),
-                  ),
-
-                ],
-              ),
-              Row(
-                children: [
-                  Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 1'),),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 2')),
-                  ),
-                  Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 1'),),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(child: Text('Column 2')),
-                  ),
-
-                ],
-              ),
             ],
           ),
         ),
